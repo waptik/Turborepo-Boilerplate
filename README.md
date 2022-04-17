@@ -26,7 +26,7 @@ This turborepo has some additional tools already setup for you:
 
 ## Setup
 
-`Fork` this template and `clone` it locally then run `yarn` or `npm i` to install all dependencies.
+Click the `Use this template` button to create a new repo based off this template and `clone` it locally then run `yarn` or `npm i` to install all dependencies.
 
 ### Build
 
