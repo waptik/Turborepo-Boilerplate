@@ -1,14 +1,78 @@
 {
-  "pipeline": {
-    "build": {
-      "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".next/**"]
-    },
-    "lint": {
-      "outputs": []
-    },
-    "dev": {
-      "cache": false
-    }
-  }
+	"$schema": "https://turborepo.org/schema.json",
+	"baseBranch": "origin/main",
+	"globalDependencies": [".env", "packages/prisma/.env"],
+	"pipeline": {
+		"@turbo/prisma#build": {
+			"dependsOn": ["$DATABASE_URL"]
+		},
+		"@turbo/prisma#deploy": {
+			"dependsOn": ["$DATABASE_URL"]
+		},
+		"@turbo/prisma#reset": {
+			"cache": false
+		},
+		"@turbo/prisma#seed": {
+			"cache": false,
+			"dependsOn": ["@turbo/prisma#deploy"]
+		},
+		"@turbo/web#build": {
+			"dependsOn": [
+				"^build",
+				"@turbo/prisma#build",
+				"$LOG_LEVEL",
+				"$DATABASE_URL"
+			],
+			"outputs": [".next/**"]
+		},
+		"@turbo/web#dx": {
+			"dependsOn": ["@turbo/prisma#dx"]
+		},
+		"@turbo/web#start": {
+			"dependsOn": ["@turbo/prisma#deploy"]
+		},
+		"build": {
+			"dependsOn": ["^build"],
+			"outputs": ["dist/**", ".next/**"]
+		},
+		"db-deploy": {},
+		"db-seed": {},
+		"deploy": {
+			"cache": false,
+			"dependsOn": ["@turbo/web#build"],
+			"outputs": []
+		},
+		"clean": {
+			"cache": false
+		},
+		"dev": {
+			"cache": false
+		},
+		"dx": {
+			"cache": false
+		},
+		"lint": {
+			"cache": false,
+			"outputs": []
+		},
+		"lint:report": {
+			"cache": false,
+			"outputs": ["lint-results"]
+		},
+		"start": {},
+		"test": {
+			"dependsOn": ["^test"]
+		},
+		"test-e2e": {
+			"cache": false,
+			"dependsOn": [
+				"@turbo/web#test",
+				"@turbo/web#build",
+				"@turbo/prisma#reset"
+			]
+		},
+		"type-check": {
+			"outputs": []
+		}
+	}
 }

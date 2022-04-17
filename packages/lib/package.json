@@ -1,0 +1,14 @@
+{
+  "name": "@turbo/lib",
+  "version": "0.0.0",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "license": "MIT",
+  "dependencies": {
+    "tslog": "^3.2.1"
+  },
+  "devDependencies": {
+    "@turbo/tsconfig": "*",
+    "typescript": "^4.5.3"
+  }
+}

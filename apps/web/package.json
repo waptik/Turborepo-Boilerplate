@@ -1,5 +1,5 @@
 {
-  "name": "web",
+  "name": "@turbo/web",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -9,18 +9,41 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "12.0.8",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "ui": "*"
+    "@chakra-ui/pro-theme": "^0.0.43",
+    "@chakra-ui/react": "^1.8.7",
+    "@emotion/react": "11",
+    "@emotion/styled": "11",
+    "@fontsource/inter": "^4.5.7",
+    "@next/bundle-analyzer": "^12.1.4",
+    "@saas-ui/react": "^0.12.6",
+    "@trpc/client": "^9.21.0",
+    "@trpc/next": "^9.22.0",
+    "@trpc/react": "^9.21.0",
+    "@trpc/server": "^9.21.0",
+    "@turbo/lib": "workspace:^",
+    "@turbo/prisma": "workspace:^",
+    "@turbo/tsconfig": "workspace:^",
+    "framer-motion": "6",
+    "next": "latest",
+    "next-seo": "^5.3.0",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-query": "^3.34.19",
+    "superjson": "^1.8.1",
+    "zod": "^3.14.4"
   },
   "devDependencies": {
-    "config": "*",
+    "@playwright/test": "^1.21.0",
+    "@turbo/config": "workspace:^",
+    "@turbo/types": "workspace:^",
+    "@types/node": "latest",
+    "@types/nodemailer": "^6.4.4",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
     "eslint": "7.32.0",
-    "next-transpile-modules": "9.0.0",
-    "tsconfig": "*",
-    "@types/node": "^17.0.12",
-    "@types/react": "17.0.37",
+    "jest": "^27.5.1",
+    "ts-jest": "^27.1.4",
+    "ts-node": "^10.7.0",
     "typescript": "^4.5.3"
   }
 }
