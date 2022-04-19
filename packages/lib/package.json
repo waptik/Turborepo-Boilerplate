@@ -8,7 +8,7 @@
     "tslog": "^3.2.1"
   },
   "devDependencies": {
-    "@turbo/tsconfig": "*",
+    "@turbo/tsconfig": "workspace:^",
     "typescript": "^4.5.3"
   }
 }
