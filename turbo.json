@@ -52,6 +52,7 @@
       "cache": false,
       "outputs": ["lint-results"]
     },
+    "post-install": {},
     "start": {},
     "test": {
       "dependsOn": ["^test"]
