@@ -1,5 +1,5 @@
 {
-  "extends": "@ecolelist/tsconfig/base.json",
+  "extends": "@turbo/tsconfig/base.json",
   "include": ["."],
   "exclude": ["dist", "build", "node_modules"]
 }

@@ -12,7 +12,7 @@ export function createRouter() {
 export function createProtectedRouter() {
   return createRouter().middleware(({ ctx, next }) => {
     return next({
-      ctx
+      ctx,
     });
   });
 }

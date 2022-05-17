@@ -1,10 +1,9 @@
 import { GetServerSidePropsContext } from "next";
 import superjson from "superjson";
-
 import { createContext } from "~server/createContext";
-import { createSSGHelpers } from "@trpc/react/ssg";
-
 import { appRouter } from "~server/routers/_app";
+
+import { createSSGHelpers } from "@trpc/react/ssg";
 
 /**
  * Initialize server-side rendering tRPC helpers.

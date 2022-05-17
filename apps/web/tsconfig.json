@@ -3,11 +3,11 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "~/*":["./*"],
-      "@components/*": ["components/*"],
-      "@lib/*": ["lib/*"],
+      "~/*": ["./*"],
+      "~components/*": ["components/*"],
+      "~lib/*": ["lib/*"],
       "~server/*": ["server/*"],
-      "~ee/*": ["ee/*"],
+      "@prisma/client": ["@turbo/prisma/client"],
       "@prisma/client/*": ["@turbo/prisma/client/*"]
     }
   },

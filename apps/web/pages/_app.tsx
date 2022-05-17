@@ -21,7 +21,6 @@ const NextLink: React.FC<LinkProps> = (props) => <Link passHref {...props} />;
 function MyApp(props: AppProps) {
   const { Component, pageProps, err, router } = props;
 
-
   return (
     <>
       <AppProviders {...props}>

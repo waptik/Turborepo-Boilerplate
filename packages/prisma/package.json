@@ -8,12 +8,12 @@
     "deploy": "yarn prisma migrate deploy",
     "migrate": "yarn prisma migrate dev",
     "nuke": "docker-compose down --volumes --remove-orphans",
-    "reset": "run-s db-nuke db-setup",
+    "reset": "run-s nuke setup",
     "seed": "yarn prisma db seed",
-    "setup": "run-s db-up db-deploy db-seed",
+    "setup": "run-s up deploy seed",
     "studio": "yarn prisma studio",
     "up": "docker-compose up -d",
-    "dx": "yarn db-setup",
+    "dx": "yarn setup",
     "generate-schemas": "prisma generate && prisma format",
     "postinstall": "yarn generate-schemas"
   },
@@ -31,6 +31,7 @@
     "client"
   ],
   "prisma": {
-    "seed": "ts-node ./seed.ts"
+    "seed": "ts-node ./seed.ts",
+    "schema": "schema.prisma"
   }
 }

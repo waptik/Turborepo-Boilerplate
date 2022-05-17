@@ -1,5 +1,3 @@
-
-
 const siteConfig = {
   copyright: `Copyright © ${new Date().getFullYear()} Appulse Software B.V. All Rights Reserved.`,
   author: {
@@ -23,7 +21,7 @@ const siteConfig = {
       locale: "en_US",
       url: "https://github.com/waptik/turborepo-boilerplate",
       title: "Project",
-      description:  "My boilerplate project based on top on turborepo.",
+      description: "My boilerplate project based on top on turborepo.",
       site_name: "Project: My boilerplate project based on top on turborepo.",
       images: [
         {

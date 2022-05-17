@@ -5,6 +5,5 @@ declare namespace NodeJS {
     readonly VERCEL_ENV: "production" | "preview" | "development" | undefined;
     /** The URL of the deployment. Example: my-site-7q03y4pi5.vercel.app. */
     readonly VERCEL_URL: string | undefined;
-
   }
 }

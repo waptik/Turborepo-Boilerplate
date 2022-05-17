@@ -1,1 +1,1 @@
-export { default as prisma } from "@turbo/prisma";
+export { default } from "@turbo/prisma";

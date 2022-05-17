@@ -12,7 +12,6 @@ if (process.env.ANALYZE === "true") {
   plugins.push(withBundleAnalyzer);
 }
 
-
 /** @type {import("next").NextConfig} */
 const nextConfig = {
   webpack: (config) => {
@@ -24,7 +23,13 @@ const nextConfig = {
 
     return config;
   },
-  reactStrictMode:true
+  eslint: {
+    ignoreDuringBuilds: process.env.NODE_ENV !== "development",
+  },
+  typescript: {
+    ignoreBuildErrors: process.env.NODE_ENV !== "development",
+  },
+  reactStrictMode: true,
 };
 
 module.exports = () => plugins.reduce((acc, next) => next(acc), nextConfig);

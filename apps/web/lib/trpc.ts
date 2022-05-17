@@ -1,12 +1,12 @@
 // ℹ️ Type-only import:
 // https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-8.html#type-only-imports-and-export
 import superjson from "superjson";
-import { createContext, createContextInner, CreateContextOptions } from "~/server/createContext";
-import { appRouter } from "~/server/routers/_app";
+import { createContext, CreateContextOptions } from "~server/createContext";
 import type { AppRouter } from "~server/routers/_app";
+import { appRouter } from "~server/routers/_app";
 
 import { createReactQueryHooks } from "@trpc/react";
-import type { inferProcedureOutput, inferProcedureInput } from "@trpc/server";
+import type { inferProcedureInput, inferProcedureOutput } from "@trpc/server";
 
 /**
  * A set of strongly-typed React hooks from your `AppRouter` type signature with `createReactQueryHooks`.
@@ -34,7 +34,7 @@ export type inferMutationInput<TRouteKey extends keyof AppRouter["_def"]["mutati
 export type inferMutationOutput<TRouteKey extends keyof AppRouter["_def"]["mutations"]> =
   inferProcedureOutput<AppRouter["_def"]["mutations"][TRouteKey]>;
 
-  // to be used in api routes
+// to be used in api routes
 export async function createCaller(opts: CreateContextOptions) {
   const ctx = await createContext(opts);
   const caller = appRouter.createCaller(ctx);

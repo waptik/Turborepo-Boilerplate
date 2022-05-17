@@ -7,14 +7,7 @@ module.exports = {
   semi: true,
   printWidth: 110,
   arrowParens: "always",
-  importOrder: [
-    "^@turbo/(.*)$",
-    "^@lib/(.*)$",
-    "^@components/(.*)$",
-    "^@(server|trpc)/(.*)$",
-    "^[./]",
-  ],
+  importOrder: ["^@turbo/(.*)$", "^~lib/(.*)$", "^~components/(.*)$", "^~(server|trpc)/(.*)$", "^[./]"],
   importOrderSeparation: true,
-  // importOrderSortSpecifiers: true,
   plugins: [require("@trivago/prettier-plugin-sort-imports")],
 };

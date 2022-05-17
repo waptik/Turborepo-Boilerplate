@@ -3085,6 +3085,7 @@ __metadata:
     "@turbo/config": "workspace:^"
     "@turbo/lib": "workspace:^"
     "@turbo/prisma": "workspace:^"
+    "@turbo/tsconfig": "workspace:^"
     "@turbo/types": "workspace:^"
     "@types/node": latest
     "@types/nodemailer": ^6.4.4
